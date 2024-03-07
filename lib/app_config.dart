@@ -16,6 +16,7 @@ class AppConfig extends StatelessWidget {
   Widget build(BuildContext context) {
     EnvironmentConfig env = EnvironmentConfig.getEnvConfig();
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: env.appTitle,
       theme: ThemeData(
         primarySwatch: AppTheme.colors['primary'],
