@@ -25,4 +25,8 @@ class CollectionId extends UniqueId{
   factory CollectionId(){
     return CollectionId._(const Uuid().v4());
   }
+
+  factory CollectionId.fromUniqueString(String uniqueString){
+    return CollectionId._(uniqueString);
+  }
 }

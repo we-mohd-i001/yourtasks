@@ -1,4 +1,4 @@
-import 'package:yourtasks/data/data_sources/intefaces/task_local_data_source_interface.dart';
+import 'package:yourtasks/data/data_sources/interfaces/task_local_data_source_interface.dart';
 import 'package:yourtasks/data/exceptions/exceptions.dart';
 import 'package:yourtasks/data/models/task_collections/task_collections_model.dart';
 
@@ -26,4 +26,19 @@ class MemoryLocalDataSource implements TaskLocalDataSourceInterface {
       throw CacheException();
     }
   }
+
+  @override
+  Future<TaskCollectionsModel> getTaskCollection({required String collectionId}) {
+    try{
+      final collectionModel = taskCollection.firstWhere((element) => element.id == collectionId,
+      orElse: () => throw CollectionNotFoundException(),
+
+      );
+      return Future.value(collectionModel);
+    } on Exception catch(_){
+      throw CacheException();
+    }
+  }
+
+
 }

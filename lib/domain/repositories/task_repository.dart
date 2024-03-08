@@ -6,7 +6,7 @@ import 'package:yourtasks/domain/failures/failures.dart';
 abstract class TaskRepository {
   Future<Either<Failure, List<TaskCollection>>> readTaskCollections();
 
-  Future<Either<Failure, bool>> createTodoCollection(TaskCollection collection);
+  Future<Either<Failure, bool>> createTaskCollection(TaskCollection collection);
 
   // Future<Either<Failure, CollectionId>> deleteTaskCollection();
 }
