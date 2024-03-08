@@ -24,10 +24,10 @@ class CollectionIdParam extends Params {
   List<Object?> get props => [collectionId];
 }
 
-class TaskCollectionParam extends Params {
+class TaskCollectionParams extends Params {
   final TaskCollection taskCollection;
 
-  TaskCollectionParam({required this.taskCollection}) : super();
+  TaskCollectionParams({required this.taskCollection}) : super();
 
   @override
   List<Object?> get props => [taskCollection];
