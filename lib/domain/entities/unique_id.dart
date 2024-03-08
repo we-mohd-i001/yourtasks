@@ -10,7 +10,7 @@ class UniqueId with EquatableMixin{
     return UniqueId._(const Uuid().v4());
   }
 
-  factory UniqueId.fromUniqueString(String uniqueString{
+  factory UniqueId.fromUniqueString(String uniqueString){
     return UniqueId._(uniqueString);
   }
 
